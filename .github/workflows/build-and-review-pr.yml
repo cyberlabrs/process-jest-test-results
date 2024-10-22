@@ -13,7 +13,9 @@ on:
   # we would make the commits with a different user and their PAT.  To minimize exposure
   # and complication we will request those changes be manually made by the PR author.
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [edited, reopened, synchronize]
+  pull_request_review:
+    types: [submitted]
   # paths:
   #   Do not include specific paths here.  We always want this build to run and produce a
   #   status check which are branch protection rules can use.  If this is skipped because of
