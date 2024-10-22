@@ -79,10 +79,6 @@ async function lookForExistingComment(octokit, markdownPrefix) {
 }
 
 async function createPrComment(repoToken, markdown, updateCommentIfOneExists, commentIdentifier) {
-  if (github.context.eventName != 'pull_request') {
-    core.info('This event was not triggered by a pull_request.  No comment will be created or updated.');
-    return;
-  }
 
   const markdownPrefix = `<!-- im-open/process-jest-test-results ${commentIdentifier} -->`;
   core.info(`The markdown prefix will be: '${markdownPrefix}'`);
